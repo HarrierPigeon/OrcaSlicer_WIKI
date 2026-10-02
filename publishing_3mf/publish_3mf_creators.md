@@ -40,17 +40,17 @@ An enabled slot offers:
 ### Mixed filaments
 
 Enabling a particular mixed filament automatically selects the required filament components.
-![Mixed Filament Settings](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/publish_3mf/publish_dialog_filament_settings.png?raw=true)
+![publish_dialog_filament_settings](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/publish_3mf/publish_dialog_filament_settings.png?raw=true)
 
 > [!NOTE]
 > If a mixed filament is enabled, but its required components are either disabled or have their type unchecked, a warning message will be shown.
 > This does not prevent publishing.
-> ![Mixed Filament Warning](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/publish_3mf/publish_dialog_mixed_filament_warning.png?raw=true)
+> ![publish_dialog_mixed_filament_warning](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/publish_3mf/publish_dialog_mixed_filament_warning.png?raw=true)
 
 ### Process tab
 
 Mirrors the Process settings that you see in the sidebar.
-> ![Process Settings](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/publish_3mf/publish_dialog_process_settings.png?raw=true)
+> ![publish_dialog_process_settings](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/publish_3mf/publish_dialog_process_settings.png?raw=true)
 
 ## Tips
 
