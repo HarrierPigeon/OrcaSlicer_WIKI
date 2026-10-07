@@ -177,4 +177,4 @@ The printer cost per hour.
 
 Set both to 0 for a level bed.
 
-On a [belt printer](printer_basic_information_belt_printer), these values are derived from the [belt tilt](printer_basic_information_belt_printer#belt-tilt) each time a print is prepared, overwriting any manual entries. A belt tilt about X sets **Build plate tilt X**, and a belt tilt about Y sets **Build plate tilt Y**.
+On a [belt printer](printer_basic_information_belt_printer), both fields are read-only: they are derived from the [belt tilt](printer_basic_information_belt_printer#belt-tilt) each time a print is prepared. A belt tilt about X sets **Build plate tilt X**, and a belt tilt about Y sets **Build plate tilt Y**.

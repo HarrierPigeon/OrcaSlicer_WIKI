@@ -32,7 +32,7 @@ Once the print is complete, examine each block of the tower and determine the op
 > Disable it only if you want to print the reference model at its original 0.4 mm size, for example to compare against earlier towers.
 
 > [!NOTE]
-> On a [belt printer](belt_printing), the test dialog includes a **Test model** selection. **Standard** prints a sectioned tower, while **Overhang** prints test pieces shaped like an inverted L to assess overhang quality at each temperature.
+> On a [belt printer](belt_printing), the test dialog includes a **Test model** selection. **Standard** prints a sectioned tower, while **Overhang** prints test pieces shaped like an inverted L to assess overhang quality at each temperature. The Overhang pieces carry embossed temperature numbers, so they exist only for these start/end ranges: 230–190, 240–210, 250–230, 270–230, 280–240 and 320–280 °C. Another range shows an error instead of printing mismatched numbers.
 
 ### Interpreting results
 
