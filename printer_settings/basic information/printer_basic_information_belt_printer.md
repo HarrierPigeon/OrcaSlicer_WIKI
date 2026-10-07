@@ -76,6 +76,8 @@ A positive value rotates counter-clockwise when looking down the positive tilt a
 
 The axis about which the model is rotated. It is part of the printer's kinematics, so it is only shown when the settings [mode](option_mode) is **Developer**; the belt profiles set it once.
 
+![belt_printer_settings_developer](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_printer_settings_developer.png?raw=true)
+
 - **X:** The usual layout. The gantry is tilted about X and the belt travels along Y in Prepare.
 - **Y:** The gantry is tilted about Y and the belt travels along X in Prepare.
 - **Z:** Rotates the model in the plane of the bed. This is not a tilt: no machine-frame transform is applied and no brim is generated.
