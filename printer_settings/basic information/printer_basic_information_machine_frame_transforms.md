@@ -14,12 +14,12 @@ The transforms are applied in this order:
 These settings are configured in the printer profile to match the machine's kinematics. The [Belt Printing](belt_printing) guide explains their role in the slicing process.
 
 > [!CAUTION]
-> Incorrect values can send the toolhead to an unintended position, potentially beyond the machine's travel limits. Check the preview with **Show raw G-code (belt only)** enabled, and monitor the first print at the printer.
+> Incorrect values can send the toolhead to an unintended position, potentially beyond the machine's travel limits. Monitor the first print at the printer.
 
 - [How axis remapping works](#how-axis-remapping-works)
     - [Remap values](#remap-values)
     - [Example: the belt profiles](#example-the-belt-profiles)
-    - [Two remaps](#two-remaps)
+    - [Where the remap is applied](#where-the-remap-is-applied)
     - [What to watch for](#what-to-watch-for)
 - [G-code axis remap](#g-code-axis-remap)
 - [Machine-frame tilt](#machine-frame-tilt)
@@ -54,25 +54,19 @@ The belt profiles included with OrcaSlicer use this [G-code axis remap](#g-code-
 
 A point placed in Prepare at `x = 20`, `y = 100`, `z = 5` on a belt 350 mm wide is therefore remapped to `X = 330`, `Y = 5`, `Z = 100`. The [machine-frame tilt](#machine-frame-tilt) is then applied to those coordinates.
 
-### Two remaps
+### Where the remap is applied
 
-OrcaSlicer has two independent remaps with the same available values:
-
-- The [Pre-slice axis remap](printer_basic_information_belt_printer#pre-slice-axis-remap) is applied to the **model before slicing**. It changes the direction in which layers are stacked, altering the toolpaths themselves.
-- The [G-code axis remap](#g-code-axis-remap) is applied to the **toolpaths after slicing**. It only changes the axis letters and coordinate values used to write each move.
+The remap acts on the toolpaths after slicing, so it only changes the axis letters and coordinate values used to write each move. The model itself is only rotated by the [belt tilt](printer_basic_information_belt_printer#belt-tilt) before slicing, and that rotation is undone before the remap, so the remap receives points in the coordinate system of the model as placed in Prepare.
 
 ```mermaid
 flowchart LR
-    A[Model] --> B[Pre-slice axis remap]
-    B --> C[Belt tilt rotation]
-    C --> D[Slice]
-    D --> E[Back-transform]
-    E --> F[G-code axis remap]
-    F --> G[Machine-frame tilt]
-    G --> H[G-code]
+    A[Model] --> B[Belt tilt rotation]
+    B --> C[Slice]
+    C --> D[Back-transform]
+    D --> E[G-code axis remap]
+    E --> F[Machine-frame tilt]
+    F --> G[G-code]
 ```
-
-The [G-code back-transform](printer_basic_information_belt_printer#g-code-back-transform) undoes the pre-slice remap and rotation, so the G-code axis remap receives points in the coordinate system of the model as placed in Prepare.
 
 ### What to watch for
 
@@ -90,7 +84,7 @@ The [G-code back-transform](printer_basic_information_belt_printer#g-code-back-t
 [CLI Example](cli_mode#setting-overrides): `--gcode-remap-x=pos_x` (same pattern for the other variables above).  
 Selects which slicer axis maps to each machine axis in the exported G-code. The remap is applied during G-code generation, after slicing, and does not change the toolpaths.
 
-The **X**, **Y** and **Z** fields are the machine axes. The values are described in [How axis remapping works](#how-axis-remapping-works).
+The **G-code remap X**, **Y** and **Z** rows are the machine axes. The values are described in [How axis remapping works](#how-axis-remapping-works).
 
 These fields are only shown when the settings [mode](option_mode) is **Developer**.
 

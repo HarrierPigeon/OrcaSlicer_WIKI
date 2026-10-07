@@ -260,6 +260,5 @@ This changes how the settings on this page behave:
 - [Leading length](#leading-length) and [Extra width](#extra-width) become available.
 - [Brim use EFC outline](#brim-use-efc-outline) and [Combine brims](#combine-brims) are disabled because both apply only to a flat first layer.
 - A brim cannot be combined with [Spiral vase](others_settings_special_mode#spiral-vase).
-- Copies of the same object spaced along the belt do not receive a brim. Add them as separate objects, or arrange the copies side by side across the belt.
 
 A brim is only generated when the [belt tilt](printer_basic_information_belt_printer#belt-tilt) is between 1° and 85°.

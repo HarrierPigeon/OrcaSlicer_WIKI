@@ -16,7 +16,7 @@ OrcaSlicer supports these machines with a dedicated belt printer mode, used by p
     - [1. Pre-slice rotation](#1-pre-slice-rotation)
     - [2. Slice](#2-slice)
     - [3. Supports and brim](#3-supports-and-brim)
-    - [4. G-code back-transform](#4-g-code-back-transform)
+    - [4. Back-transform](#4-back-transform)
     - [5. Machine frame](#5-machine-frame)
 - [Working with a belt printer](#working-with-a-belt-printer)
     - [Placing and arranging parts](#placing-and-arranging-parts)
@@ -91,12 +91,12 @@ The rotated model is sliced using the standard process, so walls, infill, seams,
 
 In the rotated coordinate system, the belt is a tilted plane rather than the plane at Z = 0. Supports and the brim are generated relative to that plane:
 
-- Normal, tree and organic supports end on the belt surface, and nothing is generated below it.
+- Normal, tree and organic supports end on the belt surface, and nothing is generated below it. Under an overhang at the leading end of a part they reach the belt ahead of the part's first contact with it, so the support can start before the part itself.
 - The brim is printed on the belt, with each layer contributing one strip.
 
-### 4. G-code back-transform
+### 4. Back-transform
 
-When the toolpaths are written, every point is rotated back into the coordinate system of the model as placed in Prepare. See [G-code back-transform](printer_basic_information_belt_printer#g-code-back-transform).
+When the toolpaths are written, every point is rotated back into the coordinate system of the model as placed in Prepare, so the next step receives the coordinates shown in Prepare.
 
 ### 5. Machine frame
 
@@ -124,7 +124,7 @@ In Prepare, the plate represents the belt surface, shown flat. X runs across the
 
 On a flat bed, the first layer is the first slice. On a belt, every tilted layer touches the belt along a narrow strip, so the "first layer" is a band along the belt surface that extends through the entire print.
 
-OrcaSlicer applies first-layer speed, acceleration, jerk and temperature to extrusions inside that band. Settings that count layers, including the number of layers printed [without cooling](material_cooling#no-cooling-for-the-first), use bands above the belt surface. These bands are defined by the [First layer plane](printer_basic_information_belt_printer#first-layer-plane) settings.
+OrcaSlicer applies first-layer speed, acceleration, jerk and temperature to extrusions inside that band, which is one [first layer height](quality_settings_layer_height#first-layer-height) thick. Settings that count layers, including the number of layers printed [without cooling](material_cooling#no-cooling-for-the-first), count bands of that thickness above the belt surface instead.
 
 ### Brim
 
@@ -148,11 +148,9 @@ The standard [prime tower](multimaterial_settings_prime_tower) cannot be printed
 
 ### Preview
 
-The preview transforms the toolpaths back into the model's coordinate system, so the part appears upright as designed. To see the coordinates sent to the printer, enable **Show raw G-code (belt only)** in the legend or the canvas toolbar menu, or press `B`.
+The preview shows the toolpaths in the model's coordinate system, so the part appears upright as designed. The G-code itself is written in machine coordinates; see [Machine frame transforms](printer_basic_information_machine_frame_transforms).
 
 ![belt_preview_designed](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_preview_designed.png?raw=true)
-![belt_preview_raw](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_preview_raw.png?raw=true)
-![belt_preview_legend_toggle](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_preview_legend_toggle.png?raw=true)
 
 ### Calibration
 
