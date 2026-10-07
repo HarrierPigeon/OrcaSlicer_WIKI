@@ -148,9 +148,11 @@ The standard [prime tower](multimaterial_settings_prime_tower) cannot be printed
 
 ### Preview
 
-The preview shows the toolpaths in the model's coordinate system, so the part appears upright as designed. The G-code itself is written in machine coordinates; see [Machine frame transforms](printer_basic_information_machine_frame_transforms).
+The preview shows the toolpaths in the model's coordinate system, so the part appears upright as designed. To see the coordinates written to the G-code instead, enable **Show raw G-code (belt only)** in the view menu of the preview canvas (the eye icon in the toolbar), or press `B`. The layers then lie along the belt axis the way the machine prints them. This only changes the preview; the exported G-code is the same either way.
 
 ![belt_preview_designed](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_preview_designed.png?raw=true)
+![belt_preview_view_menu](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_preview_view_menu.png?raw=true)
+![belt_preview_raw](https://github.com/OrcaSlicer/OrcaSlicer_WIKI/blob/main/images/belt/belt_preview_raw.png?raw=true)
 
 ### Calibration
 

@@ -16,7 +16,7 @@ The transforms are applied in this order:
 These settings are configured in the printer profile to match the machine's kinematics. The [Belt Printing](belt_printing) guide explains their role in the slicing process.
 
 > [!CAUTION]
-> Incorrect values can send the toolhead to an unintended position, potentially beyond the machine's travel limits. Monitor the first print at the printer.
+> Incorrect values can send the toolhead to an unintended position, potentially beyond the machine's travel limits. Check the result with **Show raw G-code (belt only)** in the preview's view menu (see [Preview](belt_printing#preview)), and monitor the first print at the printer.
 
 - [How axis remapping works](#how-axis-remapping-works)
     - [Remap values](#remap-values)
