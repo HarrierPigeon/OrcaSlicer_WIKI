@@ -179,7 +179,7 @@ Layers are merged following these rules:
 [CLI Example](cli_mode#setting-overrides): `--belt-purge-tower-width=1`.  
 > [!IMPORTANT]
 > NEW FEATURE: **Belt purge tower**  
-> Available in: [Nightly builds](https://github.com/OrcaSlicer/OrcaSlicer/releases/tag/nightly-builds) or Releases greater than **2.4.2**.
+> Available in: [Nightly builds](https://github.com/OrcaSlicer/OrcaSlicer/releases/tag/nightly-builds) with the `_belt` suffix (built from the `belt-printer` branch) or Releases greater than **2.4.2**.
 
 Sets the width of the [belt purge tower](printer_multimaterial_wipe_tower#belt-purge-tower), measured across the belt. This tower replaces the prime tower on belt printers. The setting is shown when the belt purge tower is enabled in the printer settings.
 
